@@ -31,11 +31,14 @@ client.loadSlashCommands(bot, false)
 
 client.on("interactionCreate", (interaction) => {
     if (!interaction.isCommand()) return; 
-    if (!interaction.inGuild()) return interaction.reply("O comando só pode ser usado em servidores");
 
     const slashcmd = client.slashcommands.get(interaction.commandName);
 
+    if (!interaction.inGuild() && !slashcmd.isDm) return interaction.reply("O comando só pode ser usado em servidores");
+
     if (!slashcmd) return interaction.reply("Comando não encontrado");
+
+    if(slashcmd.isDm) return slashcmd.run(client, interaction);
 
     if (slashcmd.perm && !interaction.member.permissions.has(slashcmd.perm)) {
       return interaction.reply("Você não tem permissão para usar este comando");
@@ -46,13 +49,8 @@ client.on("interactionCreate", (interaction) => {
 
 client.on('ready', async () => {
   console.log('I am ready!');
-
-  const guild = client.guilds.cache.get(guildId)
-    if (!guild) {
-      return console.error("Target guild not found");
-    }
     
-    await guild.commands.set([...client.slashcommands.values()]);
+    await client.application.commands.set([...client.slashcommands.values()]);
     console.log(`Successfully loaded in ${client.slashcommands.size}`);
 });
 
@@ -62,6 +60,8 @@ client.on('messageCreate', async ( message ) => {
   if ( message.content.toLowerCase() === '/salve' ) {
     message.reply('Salve, ' + message.author.username + '!');
 
+  } else if( message.content.toLowerCase() === '/enviar' ) {
+    message.member.send('Enviei um arquivo para você!');
   }
 });
 

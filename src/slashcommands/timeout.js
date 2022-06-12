@@ -32,6 +32,7 @@ module.exports = {
     name: "timeout",
     description: "Silencia um membro",
     perm: "MODERATE_MEMBERS",
+    isDm: false,
     options: [
         {
             name: "user", description: "Quem será silenciado",

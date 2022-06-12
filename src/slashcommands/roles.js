@@ -16,6 +16,7 @@ module.exports = {
   name: "roles",
   description: "Informação sobre cargos",
   perm: "SEND_MESSAGES",
+  isDm: true,
   options: [],
   run
 }
