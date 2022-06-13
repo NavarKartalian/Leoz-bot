@@ -84,7 +84,6 @@ const embedCommands = [{
     icon_url: "https://cdn.discordapp.com/avatars/983786363411398718/2466157f779b8508ff021cc529949c49.png"
   },
   title: "Cargos",
-  url: "https://discord.gg/rMpHu6WCrX",
   description: "Aqui está uma lista dos comandos:",
   fields: [
   {
