@@ -13,7 +13,7 @@ const run = async (client, interaction) => {
 }
 
 module.exports = {
-  name: "roles",
+  name: "cargos",
   description: "Informação sobre cargos",
   perm: "SEND_MESSAGES",
   isDm: true,

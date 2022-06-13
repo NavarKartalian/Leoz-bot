@@ -20,14 +20,12 @@ const client = new discord.Client({
 
 const bot = {
   client
-}
+};
 
-const guildId = "721574303849644114";
-
-client.slashcommands = new discord.Collection() 
+client.slashcommands = new discord.Collection() ;
 
 client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload);
-client.loadSlashCommands(bot, false)
+client.loadSlashCommands(bot, false);
 
 client.on("interactionCreate", (interaction) => {
     if (!interaction.isCommand()) return; 
@@ -60,8 +58,6 @@ client.on('messageCreate', async ( message ) => {
   if ( message.content.toLowerCase() === '/salve' ) {
     message.reply('Salve, ' + message.author.username + '!');
 
-  } else if( message.content.toLowerCase() === '/enviar' ) {
-    message.member.send('Enviei um arquivo para você!');
   }
 });
 
