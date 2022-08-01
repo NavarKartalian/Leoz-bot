@@ -21,13 +21,13 @@ const embedWelcome = [{
 
     Usem /comandos para saber os comandos do bot.
     
-    Os cargos referentes as plataformas(PC, PLAYSTATION, XBOX...) não são obrigatorios mas ajudam a organizar o servidor. 
+    Os cargos referentes as plataformas (PC, PLAYSTATION, XBOX...) não são obrigatorios mas ajudam a organizar o servidor. 
     
     Existe um tempo de espera de 10 minutos até que você consiga interagir com o servidor.
     
     Para ter mais informações sobre os cargos, use o comando /cargos.
 
-    Caso queira mudar seu apelido no servidor use o comando /nickname.
+    Caso queira mudar seu apelido no servidor use o comando /nickname (Não usar nada ofensivo).
     
     Qualquer problema com o bot ou com o servidor, entre em contato com NavarHT#3150.`,
     inline: false
